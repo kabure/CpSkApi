@@ -22,8 +22,7 @@ namespace CpApi.Controllers
 		[AllowAnonymous]
 		public async Task<IActionResult> GetRoutes(string from, string to, string date = "", string time= "", string vehicle = "vlakbus")
 		{
-			List<RouteResource> routeResources = new List<RouteResource>();
-			string linkDate;
+			List<RouteResource> routeResources = new List<RouteResource>();			
 
 			if (date=="")
 				date = DateTime.Now.ToString("dd.MM.yyyy");
@@ -76,7 +75,7 @@ namespace CpApi.Controllers
 						lineResource.DepartureTime= outsideof.QuerySelector("li.item.active p.reset.time").TextContent;
 
 					if (outsideof.QuerySelector("li.item.active p.station") is not null)
-						lineResource.Bordingstation = outsideof.QuerySelector("li.item.active p.station").TextContent;
+						lineResource.Boardingstation = outsideof.QuerySelector("li.item.active p.station").TextContent;
 
 					if (outsideof.QuerySelector("li.item.active.last p.reset.time") is not null)
 						lineResource.ArrivalTime = outsideof.QuerySelector("li.item.active.last p.reset.time").TextContent;

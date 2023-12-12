@@ -10,7 +10,7 @@
 
         public string ArrivalTime { get; set; }
 
-        public string Bordingstation { get; set; }
+        public string Boardingstation { get; set; }
 
         public string ExitStation { get; set; }
 
